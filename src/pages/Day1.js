@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Highlight from 'react-highlight';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { problem52, solution52 } from "../ProjectEuler";
