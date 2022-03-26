@@ -6,6 +6,7 @@ export default function Archive() {
     <div>
         <h2>Archive</h2>
         <NavLink to="/day1">Day1</NavLink>
+        <NavLink to="/day2">Day2</NavLink>
     </div>
   )
 }

@@ -46,3 +46,57 @@ export function solution16(n=2, p=1000) {
     }
     return sumOfDigits(bigIntNum);
 }
+
+// Day 3 - Problem 35
+export const problem35 = {
+    name: "Circular primes",
+    question: `The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.
+
+    There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.
+    
+    How many circular primes are there below one million?`,
+    solution: 55
+}
+
+export function solution35() {
+    let circularPrimes = [];
+    
+    function isPrime(number) {
+        // 2 is first prime
+        if (number === 2) return true;
+        // even numbers are not prime
+        if (number % 2 === 0) return false;
+        // the divisors are repeats after sqrt of n
+        const sqrt = Math.floor(Math.sqrt(number));
+        for (let i = 3; i <= sqrt; i++) {
+            // if there are other divisor besides 1 and n then its not prime
+            if (number % i === 0) return false;
+        }
+        return true;
+    }
+    function isCircular( prime ) {
+        let rotatedPrimes = []; // containing all variations of the rotated primes
+        let nextNumber = prime; // next number to rotate
+
+        // deals with rotating the number
+        const rotater =  num => {
+            let strNum = num.toString().split("");
+            strNum.push(strNum.splice(0,1)[0]);
+            return strNum.join("");
+        }
+        // rotate the number depending on the number of digits
+        for (let i = 0; i < String(prime).length; i++) {
+            rotatedPrimes.push(nextNumber);
+            nextNumber = rotater(nextNumber);
+        }
+        // check if all variations of rotated primes are in fact prime
+        return rotatedPrimes.every( newNum => isPrime(Number(newNum)));
+    }
+    
+    for (let i = 2; i <= 1000000; i++) {
+        if (isPrime(i)) {
+            if (isCircular(i)) circularPrimes.push(i);
+        }
+    }
+    return circularPrimes.length;
+}
