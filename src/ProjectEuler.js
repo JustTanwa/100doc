@@ -100,3 +100,61 @@ export function solution35() {
     }
     return circularPrimes.length;
 }
+
+// Day 4 - Problem43
+export const problem43 = {
+    name: "Sub-string divisibility",
+    question: `The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property.
+    <p>Let <i>d</i><sub>1</sub> be the 1<sup>st</sup> digit, <i>d</i><sub>2</sub> be the 2<sup>nd</sup> digit, and so on. In this way, we note the following:</p>
+    <ul><li><i>d</i><sub>2</sub><i>d</i><sub>3</sub><i>d</i><sub>4</sub>=406 is divisible by 2</li>
+<li><i>d</i><sub>3</sub><i>d</i><sub>4</sub><i>d</i><sub>5</sub>=063 is divisible by 3</li>
+<li><i>d</i><sub>4</sub><i>d</i><sub>5</sub><i>d</i><sub>6</sub>=635 is divisible by 5</li>
+<li><i>d</i><sub>5</sub><i>d</i><sub>6</sub><i>d</i><sub>7</sub>=357 is divisible by 7</li>
+<li><i>d</i><sub>6</sub><i>d</i><sub>7</sub><i>d</i><sub>8</sub>=572 is divisible by 11</li>
+<li><i>d</i><sub>7</sub><i>d</i><sub>8</sub><i>d</i><sub>9</sub>=728 is divisible by 13</li>
+<li><i>d</i><sub>8</sub><i>d</i><sub>9</sub><i>d</i><sub>10</sub>=289 is divisible by 17</li>
+</ul>
+<p>Find the sum of all 0 to 9 pandigital numbers with this property.</p>`,
+    solution: solution43(),
+}
+
+export function solution43() {
+    // find all permutations of 1023456789 -
+    const findPermutations = (numStr) => {
+        let digits = numStr.split(""); // convert number string to array
+        let listOfPermutations = []; // will store list of permutated numbers
+
+        // recursive function to permute the number
+        function permute(digitsArr, memo = []) {
+            // base case, stop the call if no more digits in the digits arr
+            if (digitsArr.length === 0) {
+                listOfPermutations.push(memo.join("")); // add the permutated number into the list
+            } else {
+                for (let i = 0; i < digitsArr.length; i++) {
+                    let copyDigitsArr = [...digitsArr];
+                    // set current digit and remove from copyDigits array
+                    let currentDigit = copyDigitsArr.splice(i, 1); 
+                    permute([...copyDigitsArr], memo.concat(currentDigit));
+                }
+            }
+        }
+        permute(digits); // start the recursive function
+        return listOfPermutations;
+    }
+    
+    const isDivisible = (numStr) => {
+        return ( Number(numStr.slice(7,10)) % 17 === 0 &&
+        Number(numStr.slice(2,5)) % 3 === 0 &&
+        Number(numStr.slice(3,6)) % 5 === 0 &&
+        Number(numStr.slice(4,7)) % 7 === 0 &&
+        Number(numStr.slice(5,8)) % 11 === 0 &&
+        Number(numStr.slice(6,9)) % 13 === 0 &&
+        Number(numStr.slice(1,4)) % 2 === 0 );
+    }
+
+    const allPandigitals = findPermutations("1234567890")
+                            .filter( numstr => isDivisible(numstr));
+
+
+    return allPandigitals.reduce( (prev, next) => Number(prev) + Number(next), 0);
+}

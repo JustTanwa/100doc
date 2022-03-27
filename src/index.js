@@ -9,7 +9,7 @@ import NavBar from './components/NavBar';
 import Archive from './components/Archive';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
-import Day1 from './pages/Day1';
+import Day from './pages/Day';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,15 +18,14 @@ ReactDOM.render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route path="/today" element={<Today />} />
-        <Route path="/Archive" element={<Archive />}>
-          <Route path=":day" element={<Day1 />} />
+        <Route path="/archive" element={<Archive />} >
+          <Route path=":dayNum" element={<Day />} />
         </Route>
-        <Route path="/Blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path='/contact' element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-    
   </React.StrictMode>,
   document.getElementById('root')
 );
