@@ -128,7 +128,8 @@ export function solution43() {
         function permute(digitsArr, memo = []) {
             // base case, stop the call if no more digits in the digits arr
             if (digitsArr.length === 0) {
-                listOfPermutations.push(memo.join("")); // add the permutated number into the list
+                // add the permutated number into the list
+                listOfPermutations.push(memo.join("")); 
             } else {
                 for (let i = 0; i < digitsArr.length; i++) {
                     let copyDigitsArr = [...digitsArr];
@@ -138,6 +139,7 @@ export function solution43() {
                 }
             }
         }
+
         permute(digits); // start the recursive function
         return listOfPermutations;
     }
@@ -154,7 +156,6 @@ export function solution43() {
 
     const allPandigitals = findPermutations("1234567890")
                             .filter( numstr => isDivisible(numstr));
-
 
     return allPandigitals.reduce( (prev, next) => Number(prev) + Number(next), 0);
 }

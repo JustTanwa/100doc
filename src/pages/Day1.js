@@ -17,7 +17,7 @@ export default function Day1() {
     <main>
         <Container className="w-80 h-75 justify-content-center position-relative">
           <Row>
-            <Col lg={8}>
+            <Col lg={9}>
               <Highlight>
               {`function solution52() {
     let x = 0;

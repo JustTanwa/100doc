@@ -19,7 +19,7 @@ export default function Day4() {
         <Container className="w-80 h-75 justify-content-center position-relative">
           <Row>
             <Col lg={8} style={{overflowY: "scroll", maxHeight: "550px"}}>
-              <Highlight>
+              <Highlight className="language-javascript">
                   {`function solution43() {
     // find all permutations of 1023456789
     const findPermutations = (numStr) => {
