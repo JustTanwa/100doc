@@ -56,7 +56,7 @@ export default function ArchiveIndex() {
     const [year, setYear] = useState(new Date().getFullYear())
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const blankSquares = new Date(months[currentMonth].name + year).getDay();
-    
+
     const calenderStyle = {
         width: 800,
         height: 500,
@@ -66,6 +66,14 @@ export default function ArchiveIndex() {
         gridTemplateRows: "30% 2em 1fr",
         backgroundColor: "#55976d",
         overflow: "hidden"
+    }
+
+    const buttonStyle = {
+        fontSize: "3em", 
+        cursor: "pointer",
+        background: "transparent",
+        border: "none",
+        outline: "none"
     }
 
     function nextMonth() {
@@ -85,20 +93,22 @@ export default function ArchiveIndex() {
     return (
         <div style={{ display: 'grid', placeItems: 'center', height: "80vh" }}>
             <div className='calender' style={calenderStyle}>
-                <div className="month-year" style={{ display: 'grid', gridTemplateColumns: "20% 1fr 1fr 20%", placeItems: "center"}}>
-                    <div className="prev-month" style={{fontSize: "3em", cursor: "pointer"}} onClick={prevMonth}>&#8656;</div>
-                    <p  style={{fontSize: "3em"}}>{months[currentMonth].name}</p>
-                    <p style={{fontSize: "3em"}}>{year}</p>
-                    <div className="prev-month" style={{fontSize: "3em", cursor: "pointer"}} onClick={nextMonth}>&#8658;</div>
+                <div className="month-year" style={{ display: 'grid', gridTemplateColumns: "20% 1fr 1fr 20%", placeItems: "center" }}>
+                    <button className="prev-month" style={buttonStyle} onClick={prevMonth}>&#8656;</button>
+                    <p style={{ fontSize: "3em" }}>{months[currentMonth].name}</p>
+                    <p style={{ fontSize: "3em" }}>{year}</p>
+                    <button className="prev-month" style={buttonStyle} onClick={nextMonth}>&#8658;</button>
                 </div>
-                <ul className="weekdays" style={{ display: "flex", flexDirection: "row", wrap: "nowrap", justifyContent: "space-between", 
-                padding: 0, margin: 0, borderTop: "2px solid black", borderBottom: "2px solid black", backgroundColor: "#254230", color: "#fff" }}
+                <ul className="weekdays" style={{
+                    display: "flex", flexDirection: "row", wrap: "nowrap", justifyContent: "space-between",
+                    padding: 0, margin: 0, borderTop: "2px solid black", borderBottom: "2px solid black", backgroundColor: "#254230", color: "#fff"
+                }}
                 >
                     {weekdays.map(day => <li style={{ listStyleType: "none", flex: 1, textAlign: "center" }}>{day}</li>)}
                 </ul>
-                <div className='days' style={{display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gridTemplateRows: "repeat(5, 1fr)", background: "white"}}>
-                    {[...Array(blankSquares).keys()].map( i => <div className="day"></div>)}
-                    {[...Array(numOfDays).keys()].map(i => <div className="day" style={{padding: " 0.25em 0 0 0.5em", fontSize: "1.25em"}}>{i + 1}</div>)}
+                <div className='days' style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gridTemplateRows: "repeat(5, 1fr)", background: "white" }}>
+                    {[...Array(blankSquares).keys()].map(i => <div className="day"></div>)}
+                    {[...Array(numOfDays).keys()].map(i => <div className="day" style={{ padding: " 0.25em 0 0 0.5em", fontSize: "1.25em" }}>{i + 1}</div>)}
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function Archive() {
-  const daysCompleted = [1, 2, 3, 4, 5];
+  const daysCompleted = [1, 2, 3, 4, 5, 6 ];
 
   const buttonStyle = {
     width: "2em",
