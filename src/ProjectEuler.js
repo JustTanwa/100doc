@@ -159,3 +159,112 @@ export function solution43() {
 
     return allPandigitals.reduce( (prev, next) => Number(prev) + Number(next), 0);
 }
+// Day 5 - Kata from CodeWars 
+const codeWars = {
+    name: "Human Readable Time",
+    question: `Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS).
+<br>
+<br>
+HH = hours, padded to 2 digits, range: 00 - 99
+MM = minutes, padded to 2 digits, range: 00 - 59
+SS = seconds, padded to 2 digits, range: 00 - 59
+<br>
+<br>
+The maximum time never exceeds 359999 (99:59:59)`,
+    level: "5 kyu"
+}
+function humanReadable (seconds) {
+    // handle error input
+    if (seconds > 359999) return "Sorry, too many seconds for HH:MM:SS format";
+    // workout number of hours, minutes and seconds
+    let HH = Math.floor(seconds / 3600);
+    let MM = Math.floor(seconds / 60) % 60;
+    let SS = seconds % 60;
+    
+    // reformat to add leading zero for numbers less than 10
+    HH = HH < 10 ? "0" + HH: HH;
+    MM = MM < 10 ? "0" + MM: MM;
+    SS = SS < 10 ? "0" + SS: SS;
+    
+    return HH + ":" + MM + ":" + SS;
+  }
+// Day 6 - Kata from CodeWars
+const codeWars2 = {
+    name: "Next bigger number with the same digits",
+    question: `Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
+    <br>
+    12 ==> 21 <br>
+    513 ==> 531 <br>
+    2017 ==> 2071 <br>
+    nextBigger(num: 12)   // returns 21 <br>
+    nextBigger(num: 513)  // returns 531 <br>
+    nextBigger(num: 2017) // returns 2071 <br>
+    If the digits can't be rearranged to form a bigger number, return -1 (or nil in Swift):
+    <br>
+    9 ==> -1 <br>
+    111 ==> -1 <br>
+    531 ==> -1 <br>
+    nextBigger(num: 9)   // returns nil <br>
+    nextBigger(num: 111) // returns nil <br>
+    nextBigger(num: 531) // returns nil`,
+    level: "4 kyu"
+}
+function nextBigger(n){
+    // helper function to turn numbers into array of digits
+    function getDigits(number) {
+      const digitsArr = [];
+      while(number >= 1) {
+        digitsArr.push(Math.floor(number % 10));
+        number /= 10;
+      }
+      return digitsArr;
+    }
+    
+    // store digits in the correct order
+    const digits = getDigits(n).reverse();
+    // store length
+    const length = getDigits(n).length;
+    // sort the digit array to find biggest possible number
+    const largestNum = +[...digits].sort((a,b) => b - a).join("");
+    // if input is already biggest, return
+    if (n === largestNum) return -1;
+    
+    // actual function to help find the next biggest number
+    function findSubNextBigger(arr) {
+      const number = +arr.join("")
+      const length = arr.length;
+      const largestNum = +[...arr].sort((a,b) => b - a).join("");
+      if (number === largestNum) return -1;
+      let index;
+      // loop through each numbers and find indices of the two numbers
+      // to be swapped
+      outer: for(let i = 0; i < length; i++) {
+        for(let j = i; j < length - 1; j++) {
+          if (arr[length - 1 - i] > arr[length - 2 - j]) {
+            let curDigit = arr.splice(length - 1 - i, 1)[0];
+            arr.splice(length - 2 - j, 0, curDigit);
+            index = length - 2 - j;
+            break outer;
+          } 
+        }
+      } 
+      // truncate the arr from where the indices were swapped
+      // and find lowest possible combination with the remaining digits
+      const lowestArr = arr.slice(index + 1).sort((a, b) => a - b);
+        arr.splice(index + 1, length, ...lowestArr);
+      return arr;
+    }
+    
+    // starting from the end, evaluate the sub arr  to find the next biggest number
+    for (let i = length - 1; i >= 0; i--) {
+      if(findSubNextBigger(digits.slice(i)) !== -1) {
+        // truncate the sub array from the digits array and join the return from 
+        // findSubNextBigger function
+        digits.splice(i, length, ...findSubNextBigger(digits.slice(i)));
+        break; // exit loop as new biggest is found
+      };
+    }
+    
+    // join the array back and return
+    return +digits.join("") || -1;
+  }

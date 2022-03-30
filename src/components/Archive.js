@@ -3,16 +3,17 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function Archive() {
-  const daysCompleted = [1, 2, 3, 4];
+  const daysCompleted = [1, 2, 3, 4, 5];
 
   const buttonStyle = {
     width: "2em",
     height: "2em",
     borderRadius: "50%",
-    border: "2px dotted black",
+    border: "2px double black",
     color: "black",
     backgroundColor: "white",
     margin: "0 1em 1em 0",
+    textDecoration: "none"
   }
   const buttonStyleHover = {
     width: "2em",

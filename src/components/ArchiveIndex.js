@@ -2,84 +2,103 @@ import React, { useState } from 'react';
 
 export default function ArchiveIndex() {
     const months = {
-        January: {
+        1: {
             name: "January",
             days: 31
         },
-        February: {
+        2: {
             name: "February",
             days: new Date().getFullYear % 4 || new Date().getFullYear % 400 ? 29 : 28
         },
-        March: {
+        3: {
             name: "March",
             days: 31
         },
-        April: {
+        4: {
             name: "April",
             days: 30
         },
-        May: {
+        5: {
             name: "May",
             days: 31
         },
-        June: {
+        6: {
             name: "June",
             days: 30
         },
-        July: {
+        7: {
             name: "July",
             days: 31
         },
-        August: {
+        8: {
             name: "August",
             days: 31
         },
-        September: {
+        9: {
             name: "September",
             days: 30
         },
-        October: {
+        10: {
             name: "October",
             days: 31
         },
-        November: {
+        11: {
             name: "November",
             days: 30
         },
-        December: {
+        12: {
             name: "December",
             days: 31
         },
     }
-    const [currentMonth, setCurrentMonth] = useState("March");
-    const [numOfDays, setNumOfDays] = useState(months[currentMonth].days);
+    const [currentMonth, setCurrentMonth] = useState(3);
+    const [numOfDays, setNumOfDays] = useState(months[3].days);
+    const [year, setYear] = useState(new Date().getFullYear())
     const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const blankSquares = 1;
+    const blankSquares = new Date(months[currentMonth].name + year).getDay();
     
     const calenderStyle = {
-        width: 600,
-        height: 400,
+        width: 800,
+        height: 500,
         borderRadius: 15,
         border: "2px solid black",
         display: "grid",
         gridTemplateRows: "30% 2em 1fr",
+        backgroundColor: "#55976d",
+        overflow: "hidden"
     }
+
+    function nextMonth() {
+        const nextMonth = (currentMonth + 1) % 12 || 12;
+        if (nextMonth === 1) setYear(year + 1);
+        setCurrentMonth(nextMonth)
+        setNumOfDays(months[nextMonth].days)
+    }
+    function prevMonth() {
+        const prevMonth = (currentMonth - 1) % 12 || 12;
+        if (prevMonth === 12) setYear(year - 1);
+        setCurrentMonth(prevMonth)
+        setNumOfDays(months[prevMonth].days)
+    }
+
 
     return (
         <div style={{ display: 'grid', placeItems: 'center', height: "80vh" }}>
             <div className='calender' style={calenderStyle}>
-                <div className="month-year" style={{ display: 'grid', placeItems: 'center'}}>
-                    <p>{currentMonth}</p>
-                    <p>2022</p>
+                <div className="month-year" style={{ display: 'grid', gridTemplateColumns: "20% 1fr 1fr 20%", placeItems: "center"}}>
+                    <div className="prev-month" style={{fontSize: "3em", cursor: "pointer"}} onClick={prevMonth}>&#8656;</div>
+                    <p  style={{fontSize: "3em"}}>{months[currentMonth].name}</p>
+                    <p style={{fontSize: "3em"}}>{year}</p>
+                    <div className="prev-month" style={{fontSize: "3em", cursor: "pointer"}} onClick={nextMonth}>&#8658;</div>
                 </div>
                 <ul className="weekdays" style={{ display: "flex", flexDirection: "row", wrap: "nowrap", justifyContent: "space-between", 
-                padding: 0, margin: 0, borderTop: "2px solid black", borderBottom: "2px solid black" }}
+                padding: 0, margin: 0, borderTop: "2px solid black", borderBottom: "2px solid black", backgroundColor: "#254230", color: "#fff" }}
                 >
                     {weekdays.map(day => <li style={{ listStyleType: "none", flex: 1, textAlign: "center" }}>{day}</li>)}
                 </ul>
-                <div className='days' style={{display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gridTemplateRows: "repeat(5, 1fr)"}}>
-                    {[...Array(35 - numOfDays).keys()].map( i => <div className="day"></div>)}
-                    {[...Array(numOfDays).keys()].map(i => <div className="day">{i}</div>)}
+                <div className='days' style={{display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gridTemplateRows: "repeat(5, 1fr)", background: "white"}}>
+                    {[...Array(blankSquares).keys()].map( i => <div className="day"></div>)}
+                    {[...Array(numOfDays).keys()].map(i => <div className="day" style={{padding: " 0.25em 0 0 0.5em", fontSize: "1.25em"}}>{i + 1}</div>)}
                 </div>
             </div>
         </div>
