@@ -76,6 +76,16 @@ export default function ArchiveIndex() {
         outline: "none"
     }
 
+    const daySquareStyle = {
+        padding: " 0.25em 0 0 0.5em", fontSize: "1.25em"
+    }
+    const completedDayStyle = {
+        padding: " 0.25em 0 0 0.5em", 
+        fontSize: "1.25em",
+        background: '#84ecac'
+    }
+
+    const startDate = "24-3-2022";
     function nextMonth() {
         const nextMonth = (currentMonth + 1) % 12 || 12;
         if (nextMonth === 1) setYear(year + 1);
@@ -108,7 +118,7 @@ export default function ArchiveIndex() {
                 </ul>
                 <div className='days' style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gridTemplateRows: "repeat(5, 1fr)", background: "white" }}>
                     {[...Array(blankSquares).keys()].map(i => <div className="day"></div>)}
-                    {[...Array(numOfDays).keys()].map(i => <div className="day" style={{ padding: " 0.25em 0 0 0.5em", fontSize: "1.25em" }}>{i + 1}</div>)}
+                    {[...Array(numOfDays).keys()].map(i => <div className="day" style={ `${i + 1}-${currentMonth}-${year}` === startDate? completedDayStyle : daySquareStyle} id={`${i + 1}-${currentMonth}-${year}`}>{i + 1}</div>)}
                 </div>
             </div>
         </div>

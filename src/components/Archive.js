@@ -46,9 +46,9 @@ export default function Archive({daysCompleted}) {
             }}
             >2022</p>
             <div style={{display: "flex", justifyContent: "start", flexWrap: "wrap", paddingLeft: "2em"}}>
-              {daysCompleted.map((number) => {
-                const to = "/archive/day" + number;
-                return <Link to={to} className='d-inline-block text-center' style={buttonStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{number}</Link>
+              {daysCompleted.map((day, i) => {
+                const to = "/archive/day" + (i + 1);
+                return <Link to={to} className='d-inline-block text-center' style={buttonStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{i + 1}</Link>
               })}
             </div>
           </Col>
