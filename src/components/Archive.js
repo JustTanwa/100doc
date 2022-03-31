@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link, Outlet } from 'react-router-dom'
 
-export default function Archive() {
-  const daysCompleted = [1, 2, 3, 4, 5, 6 ];
-
+export default function Archive({daysCompleted}) {
   const buttonStyle = {
     width: "2em",
     height: "2em",

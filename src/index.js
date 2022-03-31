@@ -12,6 +12,8 @@ import NotFound from './components/NotFound';
 import Day from './pages/Day';
 import ArchiveIndex from './components/ArchiveIndex';
 
+const daysCompleted = [1, 2, 3, 4, 5, 6, 7 ];
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,8 +21,8 @@ ReactDOM.render(
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route path="/today" element={<Today />} />
-        <Route path="/archive" element={<Archive />} >
-          <Route index element={<ArchiveIndex />} />
+        <Route path="/archive" element={<Archive daysCompleted={daysCompleted} />} >
+          <Route index element={<ArchiveIndex daysCompleted={daysCompleted} />} />
           <Route path=":dayNum" element={<Day />} />
         </Route>
         <Route path="/blog" element={<Blog />} />
