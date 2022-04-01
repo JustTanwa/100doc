@@ -12,7 +12,40 @@ import NotFound from './components/NotFound';
 import Day from './pages/Day';
 import ArchiveIndex from './components/ArchiveIndex';
 
-const daysCompleted = [1, 2, 3, 4, 5, 6, 7 ];
+const daysCompleted = [
+  {
+  date: "24-3-2022",
+  blog: "",
+  },
+  {
+  date: "25-3-2022",
+  blog: "",
+  },
+  {
+  date: "26-3-2022",
+  blog: "",
+  },
+  {
+  date: "27-3-2022",
+  blog: "",
+  },
+  {
+  date: "28-3-2022",
+  blog: "",
+  },
+  {
+  date: "29-3-2022",
+  blog: "https://dev.to/justtanwa/javascript-array-methods-mapping-4ioj",
+  },
+  {
+  date: "30-3-2022",
+  blog: "",
+  },
+  {
+  date: "31-3-2022",
+  blog: "",
+  },
+];
 
 ReactDOM.render(
   <React.StrictMode>
