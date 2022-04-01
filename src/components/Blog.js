@@ -53,17 +53,17 @@ export default function Blog(props) {
           <Row>
             <Col lg={9} md={8} style={mainArticles}>
               <Row style={{flexBasis: "100%", height: "60%", paddingBottom: 10 }}>
-                <Post src={"https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2016/09/javascript-udemy-courses.jpg"} title={"Some lonngggggg title"} />
+                <Post src={"https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2016/09/javascript-udemy-courses.jpg"} title={"The weird and wonderful of JavaScript"} />
               </Row>
               <Row style={{ flexBasis: "100%", height: "40%" }}>
                 <Col sm={6} className="d-flex align-items-strech" style={{ paddingLeft: 0 }}>
                   <div className='flex-basis-100' style={{ flexBasis: "100%"}}>
-                    <Post src={"https://www.filepicker.io/api/file/4JkBtVU9QUwcwFCWi3AV"} title="another super long ass title for my second article" />
+                    <Post src={"https://www.filepicker.io/api/file/4JkBtVU9QUwcwFCWi3AV"} title="HTML stands for How To Mix Languages" />
                   </div>
                 </Col>
                 <Col sm={6} className="d-flex align-items-strech" style={{ paddingRight: 0 }}>
                   <div className='flex-basis-100' style={{ flexBasis: "100%"}}>
-                    <Post src={"https://www.filepicker.io/api/file/4JkBtVU9QUwcwFCWi3AV"} title="another super long ass title for my second article" />
+                    <Post src={"https://www.filepicker.io/api/file/4JkBtVU9QUwcwFCWi3AV"} title="Made with flexbox and Bootstrap" />
                   </div>
                 </Col>
               </Row>
