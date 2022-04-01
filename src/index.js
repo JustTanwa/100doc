@@ -35,7 +35,10 @@ const daysCompleted = [
   },
   {
   date: "29-3-2022",
-  blog: "https://dev.to/justtanwa/javascript-array-methods-mapping-4ioj",
+  blog: {
+    link:"https://dev.to/justtanwa/javascript-array-methods-mapping-4ioj",
+    title: "JavaScript Array Methods - Mapping"
+    },
   },
   {
   date: "30-3-2022",
@@ -44,6 +47,13 @@ const daysCompleted = [
   {
   date: "31-3-2022",
   blog: "",
+  },
+  {
+  date: "01-4-2022",
+  blog: {
+    link: "https://dev.to/justtanwa/javascript-array-methods-filtering-1k3p",
+    title: "JavaScript Array Methods - Filtering"
+    },
   },
 ];
 
@@ -58,7 +68,7 @@ ReactDOM.render(
           <Route index element={<ArchiveIndex daysCompleted={daysCompleted} />} />
           <Route path=":dayNum" element={<Day />} />
         </Route>
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog daysCompleted={daysCompleted} />} />
         <Route path='/contact' element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
