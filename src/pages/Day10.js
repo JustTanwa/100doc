@@ -18,16 +18,6 @@ export default function Day10() {
 		level: '5 kyu',
 	};
 
-	const blurSolution = {
-		width: 'calc(50% - 24px)',
-		height: '100%',
-		paddingRight: '12px',
-		backgroundColor: 'rgba(255, 255, 255, 0.2)',
-		top: 0,
-		WebkitBackdropFilter: 'blur(10px)',
-		backdropFilter: 'blur(10px)',
-	};
-
 	return (
 		<main>
 			<Container className='w-80 h-75 justify-content-center position-relative'>
@@ -58,11 +48,10 @@ export default function Day10() {
   return message.replace(/[A-Za-z]/g, shiftBy13);
   `}
 							</Highlight>
+							<div
+								className={'overlay position-absolute' + (toggleAnswer ? "" : " overlayBlur")}
+							></div>
 						</div>
-						<div
-							className='overlay position-absolute'
-							style={toggleAnswer ? null : blurSolution}
-						></div>
 					</Col>
 					<Col>
 						<section>

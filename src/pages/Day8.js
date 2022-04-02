@@ -3,15 +3,15 @@ import Highlight from 'react-highlight';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function Day8() {
-    const [toggleAnswer, setToggleAnswer] = useState(false)
+	const [toggleAnswer, setToggleAnswer] = useState(false);
 
-    const showAnswer = () => {
-        setToggleAnswer(!toggleAnswer);
-    }
+	const showAnswer = () => {
+		setToggleAnswer(!toggleAnswer);
+	};
 
-    const codeWars = {
-        name: "PaginationHelper",
-        question: `For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.
+	const codeWars = {
+		name: 'PaginationHelper',
+		question: `For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.
 <br>
         The class is designed to take in an array of values and an integer indicating how many items will be allowed per each page. The types of values contained within the collection/array are not relevant.
         
@@ -31,27 +31,24 @@ helper.pageIndex(-10); //should == -1
             </code>
         </div>
         `,
-        level: "5 kyu"
-    }
+		level: '5 kyu',
+	};
 
-    const blurSolution = {
-        width: "calc(50% - 24px)",
-        height: "100%",
-        paddingRight: "12px",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        top: 0,
-        WebkitBackdropFilter: "blur(10px)",
-        backdropFilter: "blur(10px)",
-    }
-
-    return (
-        <main>
-            <Container className="w-80 h-75 justify-content-center position-relative">
-                <Row>
-                    <Col lg={6} style={toggleAnswer ? { overflowY: "scroll", maxHeight: "550px" } : { overflow: 'hidden', maxHeight: "550px" }}>
-                        <div className="code-container position-relative">
-                            <Highlight className="language-javascript" >
-                                {`function PaginationHelper(collection, itemsPerPage){
+	return (
+		<main>
+			<Container className='w-80 h-75 justify-content-center position-relative'>
+				<Row>
+					<Col
+						lg={6}
+						style={
+							toggleAnswer
+								? { overflowY: 'scroll', maxHeight: '550px' }
+								: { overflow: 'hidden', maxHeight: '550px' }
+						}
+					>
+						<div className='code-container position-relative'>
+							<Highlight className='language-javascript'>
+								{`function PaginationHelper(collection, itemsPerPage){
   this.collection = collection;
   this.itemsPerPage = itemsPerPage;
   this.numOfItems = collection.length;
@@ -78,21 +75,29 @@ PaginationHelper.prototype.pageIndex = function(itemIndex) {
   if (itemIndex >= this.numOfItems || itemIndex < 0) return -1;
   return pageIndex;
 }`}
-                            </Highlight>
-                        </div>
-                        <div className='overlay position-absolute' style={toggleAnswer ? null : blurSolution}>
-                        </div>
-                    </Col>
-                    <Col>
-                        <section>
-                            <p>Day 8: Solving one of the Kata on CodeWars</p>
-                            <p><strong>{codeWars.name}</strong> {codeWars.level}</p>
-                            <p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
-                            <Button variant="secondary" type="button" onClick={showAnswer}>{toggleAnswer ? "Hide" : "Show"} solution</Button>
-                        </section>
-                    </Col>
-                </Row>
-            </Container>
-        </main>
-    )
+							</Highlight>
+							<div
+								className={
+									'overlay position-absolute' +
+									(toggleAnswer ? '' : ' overlayBlur')
+								}
+							></div>
+						</div>
+					</Col>
+					<Col>
+						<section>
+							<p>Day 8: Solving one of the Kata on CodeWars</p>
+							<p>
+								<strong>{codeWars.name}</strong> {codeWars.level}
+							</p>
+							<p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
+							<Button variant='secondary' type='button' onClick={showAnswer}>
+								{toggleAnswer ? 'Hide' : 'Show'} solution
+							</Button>
+						</section>
+					</Col>
+				</Row>
+			</Container>
+		</main>
+	);
 }

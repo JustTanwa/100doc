@@ -11,6 +11,7 @@ import Blog from './components/Blog';
 import NotFound from './components/NotFound';
 import Day from './pages/Day';
 import ArchiveIndex from './components/ArchiveIndex';
+import './index.css';
 
 const daysCompleted = [
 	{

@@ -3,15 +3,15 @@ import Highlight from 'react-highlight';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function Day9() {
-    const [toggleAnswer, setToggleAnswer] = useState(false)
+	const [toggleAnswer, setToggleAnswer] = useState(false);
 
-    const showAnswer = () => {
-        setToggleAnswer(!toggleAnswer);
-    }
+	const showAnswer = () => {
+		setToggleAnswer(!toggleAnswer);
+	};
 
-    const codeWars = {
-        name: "Greed is Good",
-        question: `Greed is a dice game played with five six-sided dice. Your mission, should you choose to accept it, is to score a throw according to these rules. You will always be given an array with five six-sided dice values.
+	const codeWars = {
+		name: 'Greed is Good',
+		question: `Greed is a dice game played with five six-sided dice. Your mission, should you choose to accept it, is to score a throw according to these rules. You will always be given an array with five six-sided dice values.
         <br>
         <br>
         <div style="background-color: rgb(10,10,10); padding: 1em 1em">
@@ -29,27 +29,24 @@ export default function Day9() {
         <br>
        A single die can only be counted once in each roll. For example, a given "5" can only count as part of a triplet (contributing to the 500 points) or as a single 50 points, but not both in the same roll.
         `,
-        level: "5 kyu"
-    }
+		level: '5 kyu',
+	};
 
-    const blurSolution = {
-        width: "calc(50% - 24px)",
-        height: "100%",
-        paddingRight: "12px",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        top: 0,
-        WebkitBackdropFilter: "blur(10px)",
-        backdropFilter: "blur(10px)",
-    }
-
-    return (
-        <main>
-            <Container className="w-80 h-75 justify-content-center position-relative">
-                <Row>
-                    <Col lg={6} style={toggleAnswer ? { overflowY: "scroll", maxHeight: "550px" } : { overflow: 'hidden', maxHeight: "550px" }}>
-                        <div className="code-container position-relative">
-                            <Highlight className="language-javascript" >
-                                {`function score( dice ) {
+	return (
+		<main>
+			<Container className='w-80 h-75 justify-content-center position-relative'>
+				<Row>
+					<Col
+						lg={6}
+						style={
+							toggleAnswer
+								? { overflowY: 'scroll', maxHeight: '550px' }
+								: { overflow: 'hidden', maxHeight: '550px' }
+						}
+					>
+						<div className='code-container position-relative'>
+							<Highlight className='language-javascript'>
+								{`function score( dice ) {
   let score = 0;
   // count occurrence of each number and store as object
   const diceCount = dice.reduce((obj,value) => {
@@ -87,21 +84,29 @@ export default function Day9() {
   }
   return score;
 }`}
-                            </Highlight>
-                        </div>
-                        <div className='overlay position-absolute' style={toggleAnswer ? null : blurSolution}>
-                        </div>
-                    </Col>
-                    <Col>
-                        <section>
-                            <p>Day 9: Solving one of the Kata on CodeWars</p>
-                            <p><strong>{codeWars.name}</strong> {codeWars.level}</p>
-                            <p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
-                            <Button variant="secondary" type="button" onClick={showAnswer}>{toggleAnswer ? "Hide" : "Show"} solution</Button>
-                        </section>
-                    </Col>
-                </Row>
-            </Container>
-        </main>
-    )
+							</Highlight>
+							<div
+								className={
+									'overlay position-absolute' +
+									(toggleAnswer ? '' : ' overlayBlur')
+								}
+							></div>
+						</div>
+					</Col>
+					<Col>
+						<section>
+							<p>Day 9: Solving one of the Kata on CodeWars</p>
+							<p>
+								<strong>{codeWars.name}</strong> {codeWars.level}
+							</p>
+							<p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
+							<Button variant='secondary' type='button' onClick={showAnswer}>
+								{toggleAnswer ? 'Hide' : 'Show'} solution
+							</Button>
+						</section>
+					</Col>
+				</Row>
+			</Container>
+		</main>
+	);
 }

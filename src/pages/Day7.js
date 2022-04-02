@@ -3,15 +3,15 @@ import Highlight from 'react-highlight';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default function Day7() {
-    const [toggleAnswer, setToggleAnswer] = useState(false)
+	const [toggleAnswer, setToggleAnswer] = useState(false);
 
-    const showAnswer = () => {
-        setToggleAnswer(!toggleAnswer);
-    }
+	const showAnswer = () => {
+		setToggleAnswer(!toggleAnswer);
+	};
 
-    const codeWars = {
-        name: "Scramblies",
-        question: `Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+	const codeWars = {
+		name: 'Scramblies',
+		question: `Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
         <br>
         <br>
         Notes:
@@ -31,27 +31,24 @@ export default function Day7() {
         </code>
         </div>
         `,
-        level: "5 kyu"
-    }
+		level: '5 kyu',
+	};
 
-    const blurSolution = {
-        width: "calc(67% - 24px)",
-        height: "100%",
-        paddingRight: "12px",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        top: 0,
-        WebkitBackdropFilter: "blur(10px)",
-        backdropFilter: "blur(10px)",
-    }
-
-    return (
-        <main>
-            <Container className="w-80 h-75 justify-content-center position-relative">
-                <Row>
-                    <Col lg={8} style={toggleAnswer ? { overflowY: "scroll", maxHeight: "550px" } : { overflow: 'hidden', maxHeight: "550px" }}>
-                        <div className="code-container position-relative">
-                            <Highlight className="language-javascript" >
-                                {`function scramble(str1, str2) {
+	return (
+		<main>
+			<Container className='w-80 h-75 justify-content-center position-relative'>
+				<Row>
+					<Col
+						lg={8}
+						style={
+							toggleAnswer
+								? { overflowY: 'scroll', maxHeight: '550px' }
+								: { overflow: 'hidden', maxHeight: '550px' }
+						}
+					>
+						<div className='code-container position-relative'>
+							<Highlight className='language-javascript'>
+								{`function scramble(str1, str2) {
  // simple case 
   const length1 = str1.length;
   const length2 = str2.length;
@@ -80,21 +77,29 @@ export default function Day7() {
   }
   return true;
 }`}
-                            </Highlight>
-                        </div>
-                        <div className='overlay position-absolute' style={toggleAnswer ? null : blurSolution}>
-                        </div>
-                    </Col>
-                    <Col>
-                        <section>
-                            <p>Day 7: Solving one of the Kata on CodeWars</p>
-                            <p><strong>{codeWars.name}</strong> {codeWars.level}</p>
-                            <p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
-                            <Button variant="secondary" type="button" onClick={showAnswer}>{toggleAnswer ? "Hide" : "Show"} solution</Button>
-                        </section>
-                    </Col>
-                </Row>
-            </Container>
-        </main>
-    )
+							</Highlight>
+							<div
+								className={
+									'overlay position-absolute' +
+									(toggleAnswer ? '' : ' overlayBlur')
+								}
+							></div>
+						</div>
+					</Col>
+					<Col>
+						<section>
+							<p>Day 7: Solving one of the Kata on CodeWars</p>
+							<p>
+								<strong>{codeWars.name}</strong> {codeWars.level}
+							</p>
+							<p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
+							<Button variant='secondary' type='button' onClick={showAnswer}>
+								{toggleAnswer ? 'Hide' : 'Show'} solution
+							</Button>
+						</section>
+					</Col>
+				</Row>
+			</Container>
+		</main>
+	);
 }

@@ -4,15 +4,15 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import 'highlight.js/styles/atom-one-dark.css';
 
 export default function Day6() {
-    const [toggleAnswer, setToggleAnswer] = useState(false)
+	const [toggleAnswer, setToggleAnswer] = useState(false);
 
-    const showAnswer = () => {
-        setToggleAnswer(!toggleAnswer);
-    }
+	const showAnswer = () => {
+		setToggleAnswer(!toggleAnswer);
+	};
 
-    const codeWars = {
-        name: "Next bigger number with the same digits",
-        question: `Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
+	const codeWars = {
+		name: 'Next bigger number with the same digits',
+		question: `Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
         <br>
         12 ==> 21 <br>
         513 ==> 531 <br>
@@ -28,27 +28,34 @@ export default function Day6() {
         nextBigger(num: 9)   // returns nil <br>
         nextBigger(num: 111) // returns nil <br>
         nextBigger(num: 531) // returns nil`,
-        level: "4 kyu"
-    }
+		level: '4 kyu',
+	};
 
-    const blurSolution = {
-        width: "calc(67% - 24px)",
-        height: "100%",
-        paddingRight: "12px",
-        backgroundColor: "rgba(255, 255, 255, 0.2)",
-        top: 0,
-        WebkitBackdropFilter: "blur(10px)",
-        backdropFilter: "blur(10px)",
-    }
+	const blurSolution = {
+		width: 'calc(67% - 24px)',
+		height: '100%',
+		paddingRight: '12px',
+		backgroundColor: 'rgba(255, 255, 255, 0.2)',
+		top: 0,
+		WebkitBackdropFilter: 'blur(10px)',
+		backdropFilter: 'blur(10px)',
+	};
 
-    return (
-        <main>
-            <Container className="w-80 h-75 justify-content-center position-relative">
-                <Row>
-                    <Col lg={8} style={toggleAnswer ? { overflowY: "scroll", maxHeight: "550px" } : { overflow: 'hidden', maxHeight: "550px" }}>
-                        <div className="code-container position-relative">
-                            <Highlight className="language-javascript" >
-                                {`function nextBigger(n){
+	return (
+		<main>
+			<Container className='w-80 h-75 justify-content-center position-relative'>
+				<Row>
+					<Col
+						lg={8}
+						style={
+							toggleAnswer
+								? { overflowY: 'scroll', maxHeight: '550px' }
+								: { overflow: 'hidden', maxHeight: '550px' }
+						}
+					>
+						<div className='code-container position-relative'>
+							<Highlight className='language-javascript'>
+								{`function nextBigger(n){
   // helper function to turn numbers into array of digits
   function getDigits(number) {
     const digitsArr = [];
@@ -107,21 +114,29 @@ export default function Day6() {
   // join the array back and return
   return +digits.join("") || -1;
 }`}
-                            </Highlight>
-                        </div>
-                        <div className='overlay position-absolute' style={toggleAnswer ? null : blurSolution}>
-                        </div>
-                    </Col>
-                    <Col>
-                        <section>
-                            <p>Day 6: Solving one of the Kata on CodeWars</p>
-                            <p><strong>{codeWars.name}</strong> {codeWars.level}</p>
-                            <p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
-                            <Button variant="secondary" type="button" onClick={showAnswer}>{toggleAnswer ? "Hide" : "Show"} solution</Button>
-                        </section>
-                    </Col>
-                </Row>
-            </Container>
-        </main>
-    )
+							</Highlight>
+							<div
+								className={
+									'overlay position-absolute' +
+									(toggleAnswer ? '' : ' overlayBlur')
+								}
+							></div>
+						</div>
+					</Col>
+					<Col>
+						<section>
+							<p>Day 6: Solving one of the Kata on CodeWars</p>
+							<p>
+								<strong>{codeWars.name}</strong> {codeWars.level}
+							</p>
+							<p dangerouslySetInnerHTML={{ __html: codeWars.question }}></p>
+							<Button variant='secondary' type='button' onClick={showAnswer}>
+								{toggleAnswer ? 'Hide' : 'Show'} solution
+							</Button>
+						</section>
+					</Col>
+				</Row>
+			</Container>
+		</main>
+	);
 }
