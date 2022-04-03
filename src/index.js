@@ -56,6 +56,10 @@ const daysCompleted = [
 			title: 'JavaScript Array Methods - Filtering',
 		},
 	},
+	{
+		date: '01-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(

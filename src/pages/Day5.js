@@ -24,16 +24,6 @@ export default function Day5() {
 		level: '5 kyu',
 	};
 
-	const blurSolution = {
-		width: 'calc(100% - 24px)',
-		height: '100%',
-		paddingRight: '12px',
-		backgroundColor: 'rgba(255, 255, 255, 0.2)',
-		top: 0,
-		WebkitBackdropFilter: 'blur(10px)',
-		backdropFilter: 'blur(10px)',
-	};
-
 	return (
 		<main>
 			<Container className='w-80 h-75 justify-content-center position-relative'>
