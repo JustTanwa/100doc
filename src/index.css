@@ -6,3 +6,13 @@
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
 }
+
+.contact {
+	width: 60%;
+}
+
+@media screen and (max-width: 768px) {
+	.contact {
+		width: auto;
+	}
+}

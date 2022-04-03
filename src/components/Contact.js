@@ -30,26 +30,26 @@ export default function Contact() {
     return (
         <Container className="mt-3 d-flex align-items-center flex-column">
             <h2 className="text-center pb-5">Contact</h2>
-            <main className="pb-5">
-                <Card style={{ width: "38rem" }}>
+            <Row className="contact">
+                <Card>
                     <Card.Body>
                         {notification && <Alert variant="success">{notification}</Alert>}
                         <Form onSubmit={handleSubmit}>
                             <Form.Group id="name" className="mb-2" as={Row}>
-                                <Form.Label column sm="2">Your name</Form.Label>
-                                <Col sm="10">
+                                <Form.Label column md="4">Your name</Form.Label>
+                                <Col>
                                     <Form.Control type="text" ref={nameRef} required />
                                 </Col>
                             </Form.Group>
                             <Form.Group id="email" className="mb-2" as={Row}>
-                                <Form.Label column sm="2">Email</Form.Label>
-                                <Col sm="10">
+                                <Form.Label column md="4">Email</Form.Label>
+                                <Col >
                                     <Form.Control type="email" ref={emailRef} required />
                                 </Col>
                             </Form.Group>
                             <Form.Group id="message" className="mb-2" as={Row}>
-                                <Form.Label column sm="2">Message</Form.Label>
-                                <Col sm="10">
+                                <Form.Label column md="4">Message</Form.Label>
+                                <Col>
                                     <Form.Control as="textarea" rows={5} ref={messageRef} required />
                                 </Col>
                             </Form.Group>
@@ -60,7 +60,7 @@ export default function Contact() {
                         </Form>
                     </Card.Body>
                 </Card>
-            </main>
+            </Row>
 
         </Container>
     )
