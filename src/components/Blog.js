@@ -51,7 +51,7 @@ export default function Blog(props) {
       <div style={{ width: "75%" }}>
         <Container>
           <Row>
-            <Col lg={9} md={8} style={mainArticles}>
+            <Col md={8} style={mainArticles}>
               <Row style={{flexBasis: "100%", height: "60%", paddingBottom: 10 }}>
                 <Post src={"https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2016/09/javascript-udemy-courses.jpg"} title={"The weird and wonderful of JavaScript"} />
               </Row>
@@ -68,7 +68,7 @@ export default function Blog(props) {
                 </Col>
               </Row>
             </Col>
-            <Col lg={3} md={4} style={recentPostStyle}>
+            <Col md={4} style={recentPostStyle}>
               <InputGroup className="mb-2">
                 <InputGroup.Text id="searchbar" style={{background: colorDark}}><FontAwesomeIcon icon={faSearch} style={{color: "#fff"}}/></InputGroup.Text>
                 <FormControl

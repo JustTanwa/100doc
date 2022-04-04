@@ -36,10 +36,10 @@ export default function Archive({ daysCompleted }) {
 
 	return (
 		<main>
-			<h2 className='text-center'>Journal Archive</h2>
-			<Container fluid className='d-grid'>
+			<h2 className='text-center pt-3 pb-4'>Journal Archive</h2>
+			<Container >
 				<Row>
-					<Col lg={2}>
+					<Col md={3}>
 						<p
 							className='text-center'
 							style={{
@@ -73,7 +73,7 @@ export default function Archive({ daysCompleted }) {
 							})}
 						</div>
 					</Col>
-					<Col lg={10}>
+					<Col md={9}>
 						<Outlet />
 					</Col>
 				</Row>

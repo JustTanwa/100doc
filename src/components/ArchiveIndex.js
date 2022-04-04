@@ -59,14 +59,16 @@ export default function ArchiveIndex() {
 	const blankSquares = new Date(months[currentMonth].name + year).getDay();
 
 	const calenderStyle = {
-		width: 800,
-		height: 500,
+		minWidth: 350,
+		minHeight: 400,
+		maxWidth: 600,
 		borderRadius: 15,
 		border: '2px solid black',
 		display: 'grid',
 		gridTemplateRows: '30% 2em 1fr',
 		backgroundColor: '#55976d',
 		overflow: 'hidden',
+		flexBasis: '60%',
 	};
 
 	const buttonStyle = {
@@ -102,7 +104,7 @@ export default function ArchiveIndex() {
 	}
 
 	return (
-		<div style={{ display: 'grid', placeItems: 'center', height: '80vh' }}>
+		<div className='d-flex justify-content-center'>
 			<div className='calender' style={calenderStyle}>
 				<div
 					className='month-year'
@@ -119,8 +121,8 @@ export default function ArchiveIndex() {
 					>
 						&#8656;
 					</button>
-					<p style={{ fontSize: '3em' }}>{months[currentMonth].name}</p>
-					<p style={{ fontSize: '3em' }}>{year}</p>
+					<p style={{ fontSize: '2em' }}>{months[currentMonth].name}</p>
+					<p style={{ fontSize: '2em' }}>{year}</p>
 					<button
 						className='prev-month'
 						style={buttonStyle}
