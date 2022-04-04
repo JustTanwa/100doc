@@ -7,7 +7,6 @@ export default function Post(props) {
 		bottom: '0',
 		left: '0',
 		background: 'rgba(0, 0, 0, 0.8)',
-		fontSize: '2.5em',
 		width: '100%',
 		height: '30%',
 		color: 'white',

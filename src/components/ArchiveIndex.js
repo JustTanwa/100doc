@@ -121,8 +121,8 @@ export default function ArchiveIndex() {
 					>
 						&#8656;
 					</button>
-					<p style={{ fontSize: '2em' }}>{months[currentMonth].name}</p>
-					<p style={{ fontSize: '2em' }}>{year}</p>
+					<p style={{ fontSize: '2em', padding: 0 }}>{months[currentMonth].name}</p>
+					<p style={{ fontSize: '2em', padding: 0 }}>{year}</p>
 					<button
 						className='prev-month'
 						style={buttonStyle}
