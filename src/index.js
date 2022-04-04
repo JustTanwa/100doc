@@ -62,7 +62,10 @@ const daysCompleted = [
 	},
 	{
 		date: '03-4-2022',
-		blog: 'https://dev.to/justtanwa/javascript-array-methods-some-every-30bb',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-array-methods-some-every-30bb',
+			title: 'JavaScript Array Methods - Some & Every',
+		},
 	},
 ];
 
