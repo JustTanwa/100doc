@@ -10,6 +10,7 @@ import Day7 from './Day7';
 import Day8 from './Day8';
 import Day9 from './Day9';
 import Day10 from './Day10';
+import Day11 from './Day11';
 
 export default function Day() {
   const { dayNum } = useParams();
@@ -25,6 +26,7 @@ export default function Day() {
     day8: <Day8 />,
     day9: <Day9 />,
     day10: <Day10 />,
+    day11: <Day11 />,
   }
 
   return (
