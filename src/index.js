@@ -67,6 +67,10 @@ const daysCompleted = [
 			title: 'JavaScript Array Methods - Some & Every',
 		},
 	},
+	{
+		date: '04-4-2022',
+		blog: ""
+	},
 ];
 
 ReactDOM.render(
