@@ -52,7 +52,8 @@ export default function ArchiveIndex() {
 			days: 31,
 		},
 	};
-	const [currentMonth, setCurrentMonth] = useState(3);
+	const today = new Date()
+	const [currentMonth, setCurrentMonth] = useState(today.getMonth() + 1);
 	const [numOfDays, setNumOfDays] = useState(months[3].days);
 	const [year, setYear] = useState(new Date().getFullYear());
 	const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -89,7 +90,6 @@ export default function ArchiveIndex() {
 		background: '#84ecac',
 	};
 
-	const startDate = '24-3-2022';
 	function nextMonth() {
 		const nextMonth = (currentMonth + 1) % 12 || 12;
 		if (nextMonth === 1) setYear(year + 1);
@@ -168,7 +168,7 @@ export default function ArchiveIndex() {
 						<div
 							className='day'
 							style={
-								`${i + 1}-${currentMonth}-${year}` === startDate
+								`${i + 1}-${currentMonth}-${year}` === `${today.getDate()}-${currentMonth}-${year}`
 									? completedDayStyle
 									: daySquareStyle
 							}
