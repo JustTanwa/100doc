@@ -11,27 +11,27 @@ import Day8 from './Day8';
 import Day9 from './Day9';
 import Day10 from './Day10';
 import Day11 from './Day11';
+import Day12 from './Day12';
+import Day13 from './Day13';
 
 export default function Day() {
-  const { dayNum } = useParams();
+	const { dayNum } = useParams();
 
-  const days = {
-    day1: <Day1 />,
-    day2: <Day2 />,
-    day3: <Day3 />,
-    day4: <Day4 />,
-    day5: <Day5 />,
-    day6: <Day6 />,
-    day7: <Day7 />,
-    day8: <Day8 />,
-    day9: <Day9 />,
-    day10: <Day10 />,
-    day11: <Day11 />,
-  }
+	const days = {
+		day1: <Day1 />,
+		day2: <Day2 />,
+		day3: <Day3 />,
+		day4: <Day4 />,
+		day5: <Day5 />,
+		day6: <Day6 />,
+		day7: <Day7 />,
+		day8: <Day8 />,
+		day9: <Day9 />,
+		day10: <Day10 />,
+		day11: <Day11 />,
+		day12: <Day12 />,
+		day13: <Day13 />,
+	};
 
-  return (
-    <main>
-      {days[dayNum]}
-    </main>
-  )
+	return <main className='mw-100'>{days[dayNum]}</main>;
 }

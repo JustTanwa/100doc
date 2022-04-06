@@ -35,9 +35,9 @@ export default function Archive({ daysCompleted }) {
 	};
 
 	return (
-		<main>
+		<main style={{maxWidth: "100vw"}}>
 			<h2 className='text-center pt-3 pb-4'>Journal Archive</h2>
-			<Container >
+			<Container>
 				<Row>
 					<Col md={3}>
 						<p
