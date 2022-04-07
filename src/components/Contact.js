@@ -1,31 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Card, Container, Form, Button, Row, Col, Alert } from 'react-bootstrap';
 
 export default function Contact() {
-    const nameRef = useRef();
-    const emailRef = useRef();
-    const messageRef = useRef();
 
-    const [notification, setNotification] = useState("")
-    const [error, setError] = useState("")
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        const name = nameRef.current.value;
-        const email = emailRef.current.value;
-        const message = messageRef.current.value;
-
-        try {
-            setNotification(`Thank you ${name} for you message, we will respond within 48 hours`);
-            nameRef.current.value = "";
-            emailRef.current.value = "";
-            messageRef.current.value = "";
-        } catch {
-            setError("Unable to send message.")
-        }
-
-
-    }
+    const [notification, setNotification] = useState("");
 
     return (
         <Container className="mt-3 d-flex align-items-center flex-column">
@@ -34,23 +12,24 @@ export default function Contact() {
                 <Card>
                     <Card.Body>
                         {notification && <Alert variant="success">{notification}</Alert>}
-                        <Form onSubmit={handleSubmit}>
+                        <Form name="contact" method="post">
+                            <input type="hidden" name="form-name" value="contact" />
                             <Form.Group id="name" className="mb-2" as={Row}>
                                 <Form.Label column md="4">Your name</Form.Label>
                                 <Col>
-                                    <Form.Control type="text" ref={nameRef} required />
+                                    <Form.Control type="text" name="name" required />
                                 </Col>
                             </Form.Group>
                             <Form.Group id="email" className="mb-2" as={Row}>
                                 <Form.Label column md="4">Email</Form.Label>
                                 <Col >
-                                    <Form.Control type="email" ref={emailRef} required />
+                                    <Form.Control type="email" name="email" required />
                                 </Col>
                             </Form.Group>
                             <Form.Group id="message" className="mb-2" as={Row}>
                                 <Form.Label column md="4">Message</Form.Label>
                                 <Col>
-                                    <Form.Control as="textarea" rows={5} ref={messageRef} required />
+                                    <Form.Control as="textarea" rows={5} name="message" required />
                                 </Col>
                             </Form.Group>
                             <Row className="d-flex justify-content-center">
