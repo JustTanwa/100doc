@@ -69,7 +69,7 @@ const daysCompleted = [
 	},
 	{
 		date: '04-4-2022',
-		blog: ""
+		blog: '',
 	},
 	{
 		date: '05-4-2022',
@@ -77,6 +77,10 @@ const daysCompleted = [
 			link: 'https://dev.to/justtanwa/javascript-array-methods-shift-unshift-push-and-pop-1fgi',
 			title: 'JavaScript Array Methods - Shift, Unshift, Push and Pop',
 		},
+	},
+	{
+		date: '06-4-2022',
+		blog: '',
 	},
 ];
 
