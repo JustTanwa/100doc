@@ -1,5 +1,5 @@
 import React from 'react';
-import Day18 from '../pages/Day17';
+import Day18 from '../pages/Day18';
 
 export default function Today() {
 	return (
