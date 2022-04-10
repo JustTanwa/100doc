@@ -86,6 +86,17 @@ const daysCompleted = [
 		date: '07-4-2022',
 		blog: '',
 	},
+	{
+		date: '08-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-array-methods-slice-splice-1jb6',
+			title: 'JavaScript Array Methods - Slice & Splice',
+		},
+	},
+	{
+		date: '09-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
