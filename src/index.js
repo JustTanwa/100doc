@@ -101,30 +101,29 @@ const daysCompleted = [
 		date: '10-4-2022',
 		blog: '',
 	},
+	{
+		date: '11-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<NavBar />
-			<Routes>
-				<Route exact path='/' element={<App />} />
-				<Route path='/today' element={<Today />} />
-				<Route
-					path='/archive'
-					element={<Archive daysCompleted={daysCompleted} />}
-				>
-					<Route
-						index
-						element={<ArchiveIndex daysCompleted={daysCompleted} />}
-					/>
-					<Route path=':dayNum' element={<Day />} />
-				</Route>
-				<Route path='/blog' element={<Blog daysCompleted={daysCompleted} />} />
-				<Route path='/contact' element={<Contact />} />
-				<Route path='*' element={<NotFound />} />
-			</Routes>
-		</BrowserRouter>
-	</React.StrictMode>,
+	<BrowserRouter>
+		<NavBar />
+		<Routes>
+			<Route exact path='/' element={<App />} />
+			<Route path='/today' element={<Today />} />
+			<Route
+				path='/archive'
+				element={<Archive daysCompleted={daysCompleted} />}
+			>
+				<Route index element={<ArchiveIndex daysCompleted={daysCompleted} />} />
+				<Route path=':dayNum' element={<Day />} />
+			</Route>
+			<Route path='/blog' element={<Blog daysCompleted={daysCompleted} />} />
+			<Route path='/contact' element={<Contact />} />
+			<Route path='*' element={<NotFound />} />
+		</Routes>
+	</BrowserRouter>,
 	document.getElementById('root')
 );
