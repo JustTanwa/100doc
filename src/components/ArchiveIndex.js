@@ -52,12 +52,12 @@ export default function ArchiveIndex() {
 			days: 31,
 		},
 	};
-	const today = new Date()
+	const today = new Date();
 	const [currentMonth, setCurrentMonth] = useState(today.getMonth() + 1);
 	const [numOfDays, setNumOfDays] = useState(months[3].days);
 	const [year, setYear] = useState(new Date().getFullYear());
 	const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-	const blankSquares = new Date(months[currentMonth].name + year).getDay();
+	const blankSquares = new Date(year, currentMonth - 1).getDay();
 
 	const calenderStyle = {
 		minWidth: 350,
@@ -121,7 +121,9 @@ export default function ArchiveIndex() {
 					>
 						&#8656;
 					</button>
-					<p style={{ fontSize: '2em', padding: 0 }}>{months[currentMonth].name}</p>
+					<p style={{ fontSize: '2em', padding: 0 }}>
+						{months[currentMonth].name}
+					</p>
 					<p style={{ fontSize: '2em', padding: 0 }}>{year}</p>
 					<button
 						className='prev-month'
@@ -147,7 +149,10 @@ export default function ArchiveIndex() {
 					}}
 				>
 					{weekdays.map((day) => (
-						<li style={{ listStyleType: 'none', flex: 1, textAlign: 'center' }}>
+						<li
+							key={day}
+							style={{ listStyleType: 'none', flex: 1, textAlign: 'center' }}
+						>
 							{day}
 						</li>
 					))}
@@ -162,17 +167,18 @@ export default function ArchiveIndex() {
 					}}
 				>
 					{[...Array(blankSquares).keys()].map((i) => (
-						<div className='day'></div>
+						<div className='day' key={i}></div>
 					))}
 					{[...Array(numOfDays).keys()].map((i) => (
 						<div
 							className='day'
 							style={
-								`${i + 1}-${currentMonth}-${year}` === `${today.getDate()}-${currentMonth}-${year}`
+								`${i + 1}-${currentMonth}-${year}` ===
+								`${today.getDate()}-${currentMonth}-${year}`
 									? completedDayStyle
 									: daySquareStyle
 							}
-							id={`${i + 1}-${currentMonth}-${year}`}
+							key={`${i + 1}-${currentMonth}-${year}`}
 						>
 							{i + 1}
 						</div>
