@@ -112,6 +112,10 @@ const daysCompleted = [
 			title: 'CSS - Brief Grid Layout Part 1',
 		},
 	},
+	{
+		date: '13-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
