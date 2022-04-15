@@ -116,6 +116,14 @@ const daysCompleted = [
 		date: '13-4-2022',
 		blog: '',
 	},
+	{
+		date: '14-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/css-brief-grid-layout-part-2-1oaf',
+			title: 'CSS - Brief Grid Layout Part 2',
+		},
+	},
+	
 ];
 
 ReactDOM.render(
