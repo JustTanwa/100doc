@@ -123,6 +123,13 @@ const daysCompleted = [
 			title: 'CSS - Brief Grid Layout Part 2',
 		},
 	},
+	{
+		date: '15-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/css-brief-grid-layout-part-3-2b53',
+			title: 'CSS - Brief Grid Layout Part 3',
+		},
+	},
 	
 ];
 
