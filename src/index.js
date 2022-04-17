@@ -130,7 +130,10 @@ const daysCompleted = [
 			title: 'CSS - Brief Grid Layout Part 3',
 		},
 	},
-	
+	{
+		date: '16-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
