@@ -17,19 +17,19 @@ export default function Day24() {
         <p><strong>Example 1:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" style="width: 125px; height: 200px;">
         <pre><strong>Input:</strong> root = [1,null,2,3]
-        <strong>Output:</strong> [1,3,2]
+<strong>Output:</strong> [1,3,2]
         </pre>
         
         <p><strong>Example 2:</strong></p>
         
         <pre><strong>Input:</strong> root = []
-        <strong>Output:</strong> []
+<strong>Output:</strong> []
         </pre>
         
         <p><strong>Example 3:</strong></p>
         
         <pre><strong>Input:</strong> root = [1]
-        <strong>Output:</strong> [1]
+<strong>Output:</strong> [1]
         </pre>
         
         <p>&nbsp;</p></div>`,

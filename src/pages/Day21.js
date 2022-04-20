@@ -21,22 +21,22 @@ export default function Day21() {
         <p><strong>Example 1:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" style="width: 300px; height: 97px; margin-top: 8px; margin-bottom: 8px;">
         <pre><strong>Input:</strong> head = [3,2,0,-4], pos = 1
-        <strong>Output:</strong> true
-        <strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+<strong>Output:</strong> true
+<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
         </pre>
         
         <p><strong>Example 2:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png" style="width: 141px; height: 74px;">
         <pre><strong>Input:</strong> head = [1,2], pos = 0
-        <strong>Output:</strong> true
-        <strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.
+<strong>Output:</strong> true
+<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.
         </pre>
         
         <p><strong>Example 3:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png" style="width: 45px; height: 45px;">
         <pre><strong>Input:</strong> head = [1], pos = -1
-        <strong>Output:</strong> false
-        <strong>Explanation:</strong> There is no cycle in the linked list.
+<strong>Output:</strong> false
+<strong>Explanation:</strong> There is no cycle in the linked list.
         </pre>
         
         <p>&nbsp;</p>

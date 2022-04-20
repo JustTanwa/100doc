@@ -17,13 +17,13 @@ export default function Day25() {
         <p><strong>Example 1:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" style="width: 354px; height: 291px;">
         <pre><strong>Input:</strong> root = [1,2,2,3,4,4,3]
-        <strong>Output:</strong> true
+<strong>Output:</strong> true
         </pre>
         
         <p><strong>Example 2:</strong></p>
         <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" style="width: 308px; height: 258px;">
         <pre><strong>Input:</strong> root = [1,2,2,null,3,null,3]
-        <strong>Output:</strong> false
+<strong>Output:</strong> false
         </pre>
         
         <p>&nbsp;</p></div>`,
