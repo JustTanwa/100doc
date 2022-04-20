@@ -142,6 +142,13 @@ const daysCompleted = [
 		date: '18-4-2022',
 		blog: '',
 	},
+	{
+		date: '19-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/css-brief-guide-on-flexbox-layout-1gnp',
+			title: 'CSS - Brief Guide on Flexbox Layout - Part 1',
+		},
+	},
 ];
 
 ReactDOM.render(

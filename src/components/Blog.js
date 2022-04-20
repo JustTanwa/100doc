@@ -19,8 +19,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Post from './Post';
 
 export default function Blog(props) {
-  const [showMorePost, setShowMorePost] = useState(true);
-  const [showMoreSocials, setShowMoreSocials] = useState(true);
+	const [showMorePost, setShowMorePost] = useState(true);
+	const [showMoreSocials, setShowMoreSocials] = useState(true);
 	const recentPostStyle = {
 		display: 'flex',
 		flexDirection: 'column',
@@ -36,13 +36,13 @@ export default function Blog(props) {
 		return articles;
 	}, []);
 
-  const togglePost = () => {
-    setShowMorePost(!showMorePost)
-  }
+	const togglePost = () => {
+		setShowMorePost(!showMorePost);
+	};
 
-  const toggleSocial = () => {
-    setShowMoreSocials(!showMoreSocials)
-  }
+	const toggleSocial = () => {
+		setShowMoreSocials(!showMoreSocials);
+	};
 
 	return (
 		<main style={{ display: 'grid', placeItems: 'center' }}>
@@ -63,34 +63,36 @@ export default function Blog(props) {
 									aria-label='search-bar'
 								/>
 							</InputGroup>
-							<Card style={{flexGrow: 1}}>
-								<Card.Header style={{ background: colorDark, color: '#fff' }} onClick={togglePost}>
+							<Card style={{ flexGrow: 1 }}>
+								<Card.Header
+									style={{ background: colorDark, color: '#fff' }}
+									onClick={togglePost}
+								>
 									{' '}
 									Recent Posts
 								</Card.Header>
-								<Card.Body className={showMorePost? 'recent-post-collapse' : null}>
+								<Card.Body
+									className={showMorePost ? 'recent-post-collapse' : null}
+								>
 									<ListGroup>
 										{lastestFiveArticles.map((article) => (
 											<ListGroupItem>
 												<a href={article.link}>{article.title}</a>
 											</ListGroupItem>
 										))}
-										<ListGroupItem>
-											Title of articles I have written, It can some times be
-											super long
-										</ListGroupItem>
-										<ListGroupItem>
-											Title of articles I have written, It can some times be
-											super long
-										</ListGroupItem>
 									</ListGroup>
 								</Card.Body>
 							</Card>
 							<Card className='mt-2'>
-								<Card.Header style={{ background: colorDark, color: '#fff' }} onClick={toggleSocial}>
+								<Card.Header
+									style={{ background: colorDark, color: '#fff' }}
+									onClick={toggleSocial}
+								>
 									Social Media
 								</Card.Header>
-								<Card.Body className={showMoreSocials? 'socials-collapse': null}>
+								<Card.Body
+									className={showMoreSocials ? 'socials-collapse' : null}
+								>
 									<div className='d-flex justify-content-evenly'>
 										<a
 											href='https://twitter.com/justtanwa'
