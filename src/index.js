@@ -149,6 +149,10 @@ const daysCompleted = [
 			title: 'CSS - Brief Guide on Flexbox Layout - Part 1',
 		},
 	},
+	{
+		date: '20-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
