@@ -172,6 +172,13 @@ const daysCompleted = [
 		date: '24-4-2022',
 		blog: '',
 	},
+	{
+		date: '25-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/css-position-property-4h7l',
+			title: 'CSS - Position Property',
+		},
+	},
 ];
 
 ReactDOM.render(
