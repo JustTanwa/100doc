@@ -179,6 +179,10 @@ const daysCompleted = [
 			title: 'CSS - Position Property',
 		},
 	},
+	{
+		date: '26-4-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
