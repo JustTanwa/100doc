@@ -10,7 +10,7 @@ export default function Day25() {
 	};
 
 	const leetCode = {
-		name: '94. Binary Tree Inorder Traversal',
+		name: '101. Symmetric Tree',
 		question: `<div><p>Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).</p>
 
         <p>&nbsp;</p>

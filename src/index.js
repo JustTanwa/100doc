@@ -187,6 +187,13 @@ const daysCompleted = [
 		date: '27-4-2022',
 		blog: '',
 	},
+	{
+		date: '26-4-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/how-i-got-better-with-css-fe7',
+			title: 'How I got better with CSS',
+		},
+	},
 ];
 
 ReactDOM.render(
