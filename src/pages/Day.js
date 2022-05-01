@@ -79,6 +79,7 @@ export default function Day() {
 		day35: <Day35 />,
 		day36: <Day36 />,
 		day37: <Day37 />,
+		day38: <Day38 />,
 	};
 
 	return <main className='mw-100'>{days[dayNum]}</main>;
