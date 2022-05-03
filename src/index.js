@@ -206,6 +206,13 @@ const daysCompleted = [
 		date: '1-5-2022',
 		blog: '',
 	},
+	{
+		date: '2-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/semantic-html-do-you-know-about-it-4pi8',
+			title: 'Semantic HTML: Do you know about it?',
+		},
+	},
 ];
 
 ReactDOM.render(
