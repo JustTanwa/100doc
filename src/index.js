@@ -213,6 +213,10 @@ const daysCompleted = [
 			title: 'Semantic HTML: Do you know about it?',
 		},
 	},
+	{
+		date: '3-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
