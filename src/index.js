@@ -225,6 +225,13 @@ const daysCompleted = [
 		date: '5-5-2022',
 		blog: '',
 	},
+	{
+		date: '6-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-event-listeners-and-handlers-1g9',
+			title: 'JavaScript - Event Listeners and Handlers',
+		},
+	},
 ];
 
 ReactDOM.render(
