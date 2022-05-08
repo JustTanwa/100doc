@@ -232,6 +232,10 @@ const daysCompleted = [
 			title: 'JavaScript - Event Listeners and Handlers',
 		},
 	},
+	{
+		date: '7-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
