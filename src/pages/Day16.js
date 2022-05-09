@@ -58,28 +58,32 @@ export default function Day16() {
 					>
 						<div className='code-container position-relative'>
 							<Highlight className='language-javascript'>
-								{`var lengthOfLongestSubstring = function(s) {
-    let start = 0;
-    let end = 0;
-    let maxLength = 0;
+								{`/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var maxAreaOfIsland = function(grid) {
+    let rows = grid.length;
+    let columns = grid[0].length;
+    let visit = new Set();
     
-    if (s === "") return 0;
-    if (s.length === 1) return 1;
-    
-    let substring = new Set();
-    
-    for (end; end < s.length;) {
-        if (!substring.has(s[end])) {
-            substring.add(s[end]);
-            maxLength = Math.max(maxLength, substring.size);
-            end++;
-        } else {
-            substring.delete(s[start]);
-            start++;
-            
+    function dfs(r, c) {
+        if (r < 0 || r >= rows || c < 0 || c >= columns || grid[r][c] === 0 || visit.has(\`\${r},\${c}\`)) return 0;
+        
+        visit.add(\`\${r},\${c}\`);
+        
+        let area = (1 + dfs(r + 1, c) + dfs(r - 1, c) + dfs(r, c + 1) + dfs(r, c - 1));
+        
+        return area;
+    }
+    let maxArea = 0;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+            maxArea = Math.max(maxArea, dfs(i,j));
         }
     }
-    return maxLength;
+    return maxArea;
+    
 };`}
 							</Highlight>
 							<div
