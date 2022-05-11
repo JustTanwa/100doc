@@ -244,6 +244,13 @@ const daysCompleted = [
 		date: '9-5-2022',
 		blog: '',
 	},
+	{
+		date: '10-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-set-4mbf',
+			title: 'JavaScript - Set',
+		},
+	},
 ];
 
 ReactDOM.render(
