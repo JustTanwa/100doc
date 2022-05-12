@@ -56,38 +56,20 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 						<div className='code-container position-relative'>
 							<Highlight className='language-javascript'>
 								{`/**
- * @param {number} k
- * @param {number} n
- * @return {number[][]}
+ * @param {number[]} nums
+ * @return {number}
  */
-var combinationSum3 = function(k, n) {
-	// simple cases
-    let min = k * (k + 1) / 2;
-    let max = 45; // sum 1 to 9;
+var removeDuplicates = function(nums) {
+    // count duplicates
+    let duplicate = 0;
     
-    if (n < min || n > max) return [];
-    
-
-    let result = [];
-    // helper function to backtrack
-    const findCombination = (arr, target, index) => {
-        if (arr.length === k && target === n) {
-            result.push(arr);
-            return;
-        }
-        if (arr.length < k && target < n) {
-            for (let i = index; i <= 9; i++) {
-                findCombination([...arr, i], target + i, i + 1);
-            }
-        }
-        
+    // change position of unique number in one loop
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) duplicate++;
+        else nums[i - duplicate] = nums[i];
     }
     
-    findCombination([], 0, 1);
-    
-    return result;
-    
-    
+    return nums.length - duplicate;
 };`}
 							</Highlight>
 							<div
