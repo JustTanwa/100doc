@@ -105,6 +105,7 @@ export default function Day() {
 		day48: <Day48 />,
 		day49: <Day49 />,
 		day50: <Day50 />,
+		day51: <Day51 />,
 	};
 
 	return <main className='mw-100'>{days[dayNum]}</main>;
