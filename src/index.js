@@ -263,6 +263,13 @@ const daysCompleted = [
 		date: '13-5-2022',
 		blog: '',
 	},
+	{
+		date: '14-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-map-ko1',
+			title: 'JavaScript - Map',
+		},
+	},
 ];
 
 ReactDOM.render(
