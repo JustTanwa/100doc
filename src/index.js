@@ -270,6 +270,10 @@ const daysCompleted = [
 			title: 'JavaScript - Map',
 		},
 	},
+	{
+		date: '15-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
