@@ -21,6 +21,7 @@ import Post from './Post';
 export default function Blog(props) {
 	const [showMorePost, setShowMorePost] = useState(true);
 	const [showMoreSocials, setShowMoreSocials] = useState(true);
+	const [search, setSearch] = useState('');
 	const recentPostStyle = {
 		display: 'flex',
 		flexDirection: 'column',
@@ -44,6 +45,10 @@ export default function Blog(props) {
 		setShowMoreSocials(!showMoreSocials);
 	};
 
+	const handleChange = (e) => {
+		setSearch(e.target.value);
+	};
+
 	return (
 		<main style={{ display: 'grid', placeItems: 'center' }}>
 			<div style={{ width: '75%' }}>
@@ -61,9 +66,12 @@ export default function Blog(props) {
 									type='search'
 									placeholder='Search....'
 									aria-label='search-bar'
+									onChange={handleChange}
 								/>
 							</InputGroup>
-							<Card style={{ flexGrow: 1 }}>
+							<Card
+								style={{ flexGrow: 1, maxHeight: '80vh', overflow: 'hidden' }}
+							>
 								<Card.Header
 									style={{ background: colorDark, color: '#fff' }}
 									onClick={togglePost}
@@ -102,7 +110,7 @@ export default function Blog(props) {
 											<FontAwesomeIcon icon={faTwitter} size='3x' />
 										</a>
 										<a
-											href='https://github.com/Katakung95'
+											href='https://github.com/JustTanwa'
 											target={'_blank'}
 											rel=' noreferrer noopener nofollow'
 										>
@@ -123,26 +131,14 @@ export default function Blog(props) {
 							</Card>
 						</Col>
 						<Col md={8} className='articles'>
-							<Post
-								src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-								title='Javascript is a beginner friendly language... or is it?'
-							/>
-							<Post
-								src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-								title='Why should you start coding?'
-							/>
-							<Post
-								src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-								title='Learning ReactJS can help you with building...'
-							/>
-							<Post
-								src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-								title='Some random articles about programming'
-							/>
-							<Post
-								src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-								title='Another extremely clickbaity title!'
-							/>
+							{lastestFiveArticles.map((article) => (
+								<Post
+									src={
+										'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+									}
+									title={article.title}
+								/>
+							))}
 						</Col>
 					</Row>
 				</Container>
