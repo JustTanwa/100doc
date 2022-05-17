@@ -19,9 +19,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Post from './Post';
 
 export default function Blog(props) {
+	const latestArticles = props.daysCompleted.reduce((articles, day) => {
+		if (day.blog) articles.push(day.blog);
+		return articles;
+	}, []);
+
 	const [showMorePost, setShowMorePost] = useState(true);
 	const [showMoreSocials, setShowMoreSocials] = useState(true);
-	const [search, setSearch] = useState('');
+	const [posts, setPosts] = useState(latestArticles);
 	const recentPostStyle = {
 		display: 'flex',
 		flexDirection: 'column',
@@ -32,11 +37,6 @@ export default function Blog(props) {
 
 	const colorDark = '#212529';
 
-	const lastestFiveArticles = props.daysCompleted.reduce((articles, day) => {
-		if (day.blog) articles.push(day.blog);
-		return articles;
-	}, []);
-
 	const togglePost = () => {
 		setShowMorePost(!showMorePost);
 	};
@@ -46,7 +46,10 @@ export default function Blog(props) {
 	};
 
 	const handleChange = (e) => {
-		setSearch(e.target.value);
+		const filtered = latestArticles.filter((post) =>
+			post.title.toLowerCase().includes(e.target.value.toLowerCase())
+		);
+		setPosts(filtered);
 	};
 
 	return (
@@ -83,7 +86,7 @@ export default function Blog(props) {
 									className={showMorePost ? 'recent-post-collapse' : null}
 								>
 									<ListGroup>
-										{lastestFiveArticles.map((article) => (
+										{latestArticles.map((article) => (
 											<ListGroupItem>
 												<a href={article.link}>{article.title}</a>
 											</ListGroupItem>
@@ -131,7 +134,7 @@ export default function Blog(props) {
 							</Card>
 						</Col>
 						<Col md={8} className='articles'>
-							{lastestFiveArticles.map((article) => (
+							{posts.map((article) => (
 								<Post
 									src={
 										'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
