@@ -282,6 +282,13 @@ const daysCompleted = [
 		date: '17-5-2022',
 		blog: '',
 	},
+	{
+		date: '18-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-forof-and-forin-3f67',
+			title: 'JavaScript - for...of and for...in',
+		},
+	},
 ];
 
 ReactDOM.render(
