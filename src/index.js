@@ -289,6 +289,10 @@ const daysCompleted = [
 			title: 'JavaScript - for...of and for...in',
 		},
 	},
+	{
+		date: '19-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
