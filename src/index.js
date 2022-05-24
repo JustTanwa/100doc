@@ -305,6 +305,13 @@ const daysCompleted = [
 		date: '22-5-2022',
 		blog: '',
 	},
+	{
+		date: '23-5-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/nodejs-and-expressjs-hello-world-3eb3',
+			title: 'NodeJS and ExpressJS - Hello World',
+		},
+	},
 ];
 
 ReactDOM.render(
