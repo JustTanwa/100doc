@@ -312,6 +312,10 @@ const daysCompleted = [
 			title: 'NodeJS and ExpressJS - Hello World',
 		},
 	},
+	{
+		date: '24-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
