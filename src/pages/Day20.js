@@ -10,7 +10,7 @@ export default function Day20() {
 	};
 
 	const leetCode = {
-		name: '542. 01 Matrix',
+		name: '994. Rotting Oranges',
 		question: `<div><p>You are given an <code>m x n</code> <code>grid</code> where each cell can have one of three values:</p>
 
         <ul>
