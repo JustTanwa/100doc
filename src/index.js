@@ -343,6 +343,10 @@ const daysCompleted = [
 		date: '30-5-2022',
 		blog: '',
 	},
+	{
+		date: '31-5-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
