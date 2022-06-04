@@ -336,7 +336,7 @@ const daysCompleted = [
 		date: '29-5-2022',
 		blog: {
 			link: 'https://dev.to/justtanwa/javascript-conditional-operator-594f',
-			title: 'NodeJS and ExpressJS - Hello World',
+			title: 'JavaScript  Conditional Operator',
 		},
 	},
 	{
@@ -353,6 +353,10 @@ const daysCompleted = [
 	},
 	{
 		date: '02-6-2022',
+		blog: '',
+	},
+	{
+		date: '03-6-2022',
 		blog: '',
 	},
 ];
