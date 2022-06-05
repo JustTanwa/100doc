@@ -359,6 +359,13 @@ const daysCompleted = [
 		date: '03-6-2022',
 		blog: '',
 	},
+	{
+		date: '04-6-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-json-510f',
+			title: 'JavaScript - JSON',
+		},
+	},
 ];
 
 ReactDOM.render(
