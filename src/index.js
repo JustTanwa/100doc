@@ -371,6 +371,10 @@ const daysCompleted = [
 		blog: '',
 	},
 	{
+		date: '06-6-2022',
+		blog: '',
+	},
+	{
 		date: '07-6-2022',
 		blog: '',
 	},
