@@ -390,6 +390,13 @@ const daysCompleted = [
 		date: '10-6-2022',
 		blog: '',
 	},
+	{
+		date: '11-6-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-hoisting-24if',
+			title: 'JavaScript - Hoisting',
+		},
+	},
 ];
 
 ReactDOM.render(
