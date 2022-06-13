@@ -397,6 +397,10 @@ const daysCompleted = [
 			title: 'JavaScript - Hoisting',
 		},
 	},
+	{
+		date: '12-6-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
