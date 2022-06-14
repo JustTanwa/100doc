@@ -81,6 +81,7 @@ import Day78 from './Day78';
 import Day79 from './Day79';
 import Day80 from './Day80';
 import Day81 from './Day81';
+import Day82 from './Day82';
 
 export default function Day() {
 	const { dayNum } = useParams();
@@ -167,6 +168,7 @@ export default function Day() {
 		day79: <Day79 />,
 		day80: <Day80 />,
 		day81: <Day81 />,
+		day82: <Day82 />,
 	};
 
 	return <main className='mw-100'>{days[dayNum]}</main>;
