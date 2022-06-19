@@ -421,6 +421,13 @@ const daysCompleted = [
 		date: '17-6-2022',
 		blog: '',
 	},
+	{
+		date: '18-6-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/javascript-destructuring-assignment-4pfp',
+			title: 'JavaScript - Destructuring assignment',
+		},
+	},
 ];
 
 ReactDOM.render(
