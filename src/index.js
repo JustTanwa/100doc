@@ -428,6 +428,10 @@ const daysCompleted = [
 			title: 'JavaScript - Destructuring assignment',
 		},
 	},
+	{
+		date: '19-6-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
