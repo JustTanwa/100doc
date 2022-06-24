@@ -1,5 +1,5 @@
 import React from 'react';
-import Day92 from '../pages/Day92';
+import Day93 from '../pages/Day93';
 
 export default function Today() {
 	return (
@@ -7,7 +7,7 @@ export default function Today() {
 			<h2 className='text-center mt-5 mb-5'>
 				Welcome, follow along on my journey to code for 100 days
 			</h2>
-			<Day92 />
+			<Day93 />
 		</div>
 	);
 }
