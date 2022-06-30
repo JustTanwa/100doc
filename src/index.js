@@ -468,6 +468,13 @@ const daysCompleted = [
 		date: '28-6-2022',
 		blog: '',
 	},
+	{
+		date: '29-6-2022',
+		blog: {
+			link: 'https://dev.to/justtanwa/what-is-your-favourite-es6-feature-2i3f',
+			title: 'What is your favourite ES6 feature?',
+		},
+	},
 ];
 
 ReactDOM.render(
