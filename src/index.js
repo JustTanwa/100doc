@@ -475,6 +475,14 @@ const daysCompleted = [
 			title: 'What is your favourite ES6 feature?',
 		},
 	},
+	{
+		date: '30-6-2022',
+		blog: '',
+	},
+	{
+		date: '01-7-2022',
+		blog: '',
+	},
 ];
 
 ReactDOM.render(
